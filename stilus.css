@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.aside-container img {
+  width: 100%;
+  border: 1px solid #ff1a1a;
+  padding: 2px;
+}
+
+body {
+  background-image: url("./kepek/hatter.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr;
+  grid-template-areas:
+    "h h"
+    "n n"
+    "as ar"
+    "f f";
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  background-color: RGB(255, 255, 230);
+}
+
+header {
+  grid-area: h;
+  opacity: 0.8;
+  background-image: url("./kepek/fejlec.jpg");
+  min-height: 550px;
+}
+
+header h1 {
+  color: red;
+  font-family: cursive;
+  font-weight: bolder;
+  padding-top: 60px;
+  text-align: center;
+}
+
+nav {
+  grid-area: n;
+  background-color: red;
+  min-height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  height: 100%;
+}
+
+nav ul li {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+nav ul li:hover {
+  background-color: green;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+aside {
+  grid-area: as;
+}
+
+article {
+  grid-area: ar;
+  text-align: justify;
+  font-size: 10px;
+  padding: 10px;
+}
+
+article h2 {
+  font-size: 15px;
+  color: #ff1a1a;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+article p {
+  padding-top: 10px;
+}
+
+article img {
+  float: right;
+  border-radius: 10%;
+  box-shadow: 2px 7px rgba(0, 0, 0, 0.512);
+}
+
+footer {
+  grid-area: f;
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "h"
+      "n"
+      "ar"
+      "as"
+      "f";
+  }
+
+  .aside-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
